@@ -14,7 +14,7 @@ First, add Han to your `mix.exs` dependencies:
 
 ```elixir
 def deps do
-  [{:han, "~> 0.2.0"}]
+  [{:han, "~> 0.3.0"}]
 end
 ```
 
