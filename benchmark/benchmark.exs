@@ -8,27 +8,27 @@ traditional_sentence = """
 
 Benchee.run(%{
   "translate a simplified chinese character" => fn ->
-    ChineseTranslation.translate("万", :simplified)
+    Han.translate("万", :simplified)
   end,
   "translate a traditional chinese character" => fn ->
-    ChineseTranslation.translate("萬", :traditional)
+    Han.translate("萬", :traditional)
   end,
   "translate a sentence in simplified chinese" => fn ->
-    ChineseTranslation.translate(simplified_sentence, :simplified)
+    Han.translate(simplified_sentence, :simplified)
   end,
   "translate a sentence in traditional chinese" => fn ->
-    ChineseTranslation.translate(traditional_sentence, :traditional)
+    Han.translate(traditional_sentence, :traditional)
   end,
   "pinyin a sentence in simplified chinese" => fn ->
-    ChineseTranslation.pinyin(simplified_sentence, :simplified)
+    Han.pinyin(simplified_sentence, :simplified)
   end,
   "pinyin a sentence in traditional chinese" => fn ->
-    ChineseTranslation.pinyin(traditional_sentence, :traditional)
+    Han.pinyin(traditional_sentence, :traditional)
   end,
   "slugify a sentence in simplified chinese" => fn ->
-    ChineseTranslation.slugify(simplified_sentence, :simplified)
+    Han.slugify(simplified_sentence, :simplified)
   end,
   "slugify a sentence in traditional chinese" => fn ->
-    ChineseTranslation.slugify(traditional_sentence, :traditional)
+    Han.slugify(traditional_sentence, :traditional)
   end
 })

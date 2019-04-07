@@ -1,25 +1,26 @@
-defmodule ChineseTranslation.Mixfile do
+defmodule Han.Mixfile do
   use Mix.Project
 
   @version File.cwd!() |> Path.join("version") |> File.read!() |> String.trim()
+  @repo_url "https://github.com/2players/han"
+  @doc_url "https://hexdocs.pm/han"
 
   def project do
     [
-      app: :chinese_translation,
+      app: :han,
       version: @version,
-      elixir: "~> 1.5",
+      elixir: "~> 1.8",
       description: description(),
       package: package(),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
 
-      # exdocs
-      # Docs
-      name: "ChineseTranslation",
-      source_url: "https://github.com/tyrchen/chinese_translation",
-      homepage_url: "https://github.com/tyrchen/chinese_translation",
+      # exdoc
+      name: "Han",
+      source_url: @repo_url,
+      homepage_url: @repo_url,
       docs: [
-        main: "ChineseTranslation",
+        main: "Han",
         extras: ["README.md"]
       ]
     ]
@@ -31,10 +32,7 @@ defmodule ChineseTranslation.Mixfile do
 
   defp deps do
     [
-      {:httpoison, "~> 0.13"},
-
-      # dev & test
-      {:benchfella, "~> 0.3.5", only: [:dev]},
+      {:httpoison, "~> 1.4"},
       {:credo, "~> 0.8", only: [:dev, :test]},
       {:ex_doc, "~> 0.19", only: [:dev, :test]},
       {:pre_commit_hook, "~> 1.0.6", only: [:dev]},
@@ -44,7 +42,7 @@ defmodule ChineseTranslation.Mixfile do
 
   defp description do
     """
-    ChineseTranslation provides traditional chinese <-> simplified chinese translation, as well as pinyin translation and slugify for chinese phrases/characters.
+    Utils for processing chinese.
     """
   end
 
@@ -52,10 +50,10 @@ defmodule ChineseTranslation.Mixfile do
     [
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*", "version"],
       licenses: ["MIT"],
-      maintainers: ["tyr.chen@gmail.com"],
+      maintainers: ["m3121n"],
       links: %{
-        "GitHub" => "https://github.com/tyrchen/chinese_translation",
-        "Docs" => "https://hexdocs.pm/chinese_translation"
+        "GitHub" => @repo_url,
+        "Docs" => @doc_url
       }
     ]
   end

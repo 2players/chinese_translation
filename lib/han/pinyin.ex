@@ -1,9 +1,9 @@
-defmodule ChineseTranslation.Pinyin do
+defmodule Han.Pinyin do
   @moduledoc """
   Read the word/character -> pinyin file and generate functions for matching.
   """
 
-  alias ChineseTranslation.Pinyin.Util
+  alias Han.Pinyin.Util
 
   IO.puts("Max word length used by compilation: #{Util.max_word_len()}")
 

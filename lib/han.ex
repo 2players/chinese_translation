@@ -1,7 +1,7 @@
-defmodule ChineseTranslation do
-  alias ChineseTranslation.Pinyin
-  alias ChineseTranslation.Slugify
-  alias ChineseTranslation.Translation, as: Translate
+defmodule Han do
+  alias Han.Pinyin
+  alias Han.Slugify
+  alias Han.Translate, as: Translate
 
   @moduledoc """
   Utils for processing chinese.
@@ -10,13 +10,13 @@ defmodule ChineseTranslation do
   @doc ~S"""
   Public function to translate chinese. Example:
 
-      iex> ChineseTranslation.translate("中国")
+      iex> Han.translate("中国")
       "中國"
 
-      iex> ChineseTranslation.translate("中国", :simplified)
+      iex> Han.translate("中国", :simplified)
       "中國"
 
-      iex> ChineseTranslation.translate("中國", :traditional)
+      iex> Han.translate("中國", :traditional)
       "中国"
 
   """
@@ -31,13 +31,13 @@ defmodule ChineseTranslation do
   @doc ~S"""
   Public function to convert Chinese words to pinyin. Example:
 
-      iex> ChineseTranslation.pinyin("中国")
+      iex> Han.pinyin("中国")
       "zhōng guó"
 
-      iex> ChineseTranslation.pinyin("中国", :simplified)
+      iex> Han.pinyin("中国", :simplified)
       "zhōng guó"
 
-      iex> ChineseTranslation.pinyin("中國", :traditional)
+      iex> Han.pinyin("中國", :traditional)
       "zhōng guó"
 
   """
@@ -57,16 +57,16 @@ defmodule ChineseTranslation do
   @doc ~S"""
   Public function to slugify Chinese words. Example:
 
-      iex> ChineseTranslation.slugify("中国")
+      iex> Han.slugify("中国")
       "zhong-guo"
 
-      iex> ChineseTranslation.slugify("中國", :traditional)
+      iex> Han.slugify("中國", :traditional)
       "zhong-guo"
 
-      iex> ChineseTranslation.slugify(" *& 46 848 中 ----- 国")
+      iex> Han.slugify(" *& 46 848 中 ----- 国")
       "46-848-zhong-guo"
 
-      iex> ChineseTranslation.slugify("关于 Elixir 的 HTML5 页面")
+      iex> Han.slugify("关于 Elixir 的 HTML5 页面")
       "guan-yu-elixir-de-html5-ye-mian"
 
   """

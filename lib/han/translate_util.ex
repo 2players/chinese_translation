@@ -1,9 +1,10 @@
-defmodule ChineseTranslation.Translation.Util do
+defmodule Han.Translate.Util do
   @moduledoc """
   Utility functions to read s2t_conversion.txt file and parse it into a list
   ordered by the length of the words.
   """
-  alias ChineseTranslation.Utils
+
+  alias Han.Utils
 
   # .*? no-greedy match ;)
   @php_regex ~r/\$(?<name>\S+).*?\[(?<content>[^\]]*)\]/s

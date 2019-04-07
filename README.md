@@ -10,7 +10,7 @@ This module provides three core functionalities related to chinese:
 
 ## Installation
 
-First, add ChineseTranslation to your `mix.exs` dependencies:
+First, add Han to your `mix.exs` dependencies:
 
 ```elixir
 def deps do
@@ -23,15 +23,16 @@ Then, run `$ mix deps.get` to get the dependencies.
 > This module will compile over 133, 000 functions by default (compile all the 2-char phrases and 1-char chanracters). Due to this, compilation time is around 30 minutes. So be patient! You can set environment variable `MAX_WORD_LEN` to tune the compilation:
 
 ```bash
-$ MAX_WORD_LEN=1 mix compile # this will compile around 40, 000 functions
+# This will compile around 40, 000 functions
+$ MAX_WORD_LEN=1 mix compile
 ```
 
-## Update metadata
+## Update database
 
-This module has a built-in mix task - download the latest metadatas:
+This module has a built-in mix task - download the latest database:
 
 ```bash
-$ mix chinese_translation
+$ mix han.update_database
 ```
 
 The downloaded file will be put into `priv/`.
@@ -43,42 +44,42 @@ Han is very easy to use, as follows:
 ### Translate
 
 ```sh
-iex> ChineseTranslation.translate("中国")
+iex> Han.translate("中国")
 "中國"
 
-iex> ChineseTranslation.translate("中国", :simplified)
+iex> Han.translate("中国", :simplified)
 "中國"
 
-iex> ChineseTranslation.translate("中國", :traditional)
+iex> Han.translate("中國", :traditional)
 "中国"
 ```
 
 ### Pinyin
 
 ```sh
-iex> ChineseTranslation.pinyin("中国")
+iex> Han.pinyin("中国")
 "zhōng guó"
 
-iex> ChineseTranslation.pinyin("中国", :simplified)
+iex> Han.pinyin("中国", :simplified)
 "zhōng guó"
 
-iex> ChineseTranslation.pinyin("中國", :traditional)
+iex> Han.pinyin("中國", :traditional)
 "zhōng guó"
 ```
 
 ### Slugify
 
 ```sh
-iex> ChineseTranslation.slugify("中国")
+iex> Han.slugify("中国")
 "zhong-guo"
 
-iex> ChineseTranslation.slugify("中國", :traditional)
+iex> Han.slugify("中國", :traditional)
 "zhong-guo"
 
-iex> ChineseTranslation.slugify(" *& 46 848 中 ----- 国")
+iex> Han.slugify(" *& 46 848 中 ----- 国")
 "46-848-zhong-guo"
 
-iex> ChineseTranslation.slugify("关于 Elixir 的 HTML5 页面")
+iex> Han.slugify("关于 Elixir 的 HTML5 页面")
 "guan-yu-elixir-de-html5-ye-mian"
 ```
 

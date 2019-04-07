@@ -1,8 +1,8 @@
-defmodule ChineseTranslation.Translation do
+defmodule Han.Translate do
   @moduledoc """
   Generate a set of translation functions.
   """
-  alias ChineseTranslation.Translation.Util
+  alias Han.Translate.Util
 
   Util.get_trans_data()
   |> Enum.each(fn {simp, trad} ->

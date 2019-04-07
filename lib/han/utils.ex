@@ -1,9 +1,9 @@
-defmodule ChineseTranslation.Utils do
+defmodule Han.Utils do
   @moduledoc """
   Utility functions.
   """
   def data_path do
-    :chinese_translation
+    :han
     |> Application.app_dir()
     |> Path.join("priv")
   end

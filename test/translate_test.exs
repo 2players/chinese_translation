@@ -1,23 +1,23 @@
-defmodule ChineseTranslationTest.Translation do
+defmodule HanTest.Translate do
   use ExUnit.Case
-  doctest ChineseTranslation
+  doctest Han
 
   test "can translate character s->t" do
-    assert ChineseTranslation.translate("万") == "萬"
-    assert ChineseTranslation.translate("万", :simplified) == "萬"
+    assert Han.translate("万") == "萬"
+    assert Han.translate("万", :simplified) == "萬"
   end
 
   test "can translate character t->s" do
-    assert ChineseTranslation.translate("萬", :traditional) == "万"
+    assert Han.translate("萬", :traditional) == "万"
   end
 
   test "can translate words s->t" do
-    assert ChineseTranslation.translate("干线") == "幹線"
-    assert ChineseTranslation.translate("干线", :simplified) == "幹線"
+    assert Han.translate("干线") == "幹線"
+    assert Han.translate("干线", :simplified) == "幹線"
   end
 
   test "can translate words t->s" do
-    assert ChineseTranslation.translate("幹線", :traditional) == "干线"
+    assert Han.translate("幹線", :traditional) == "干线"
   end
 
   @simplified_string """
@@ -29,11 +29,11 @@ defmodule ChineseTranslationTest.Translation do
   """
 
   test "translate a sentence s->t" do
-    assert ChineseTranslation.translate(@simplified_string) == @traditional_string
-    assert ChineseTranslation.translate(@simplified_string, :simplified) == @traditional_string
+    assert Han.translate(@simplified_string) == @traditional_string
+    assert Han.translate(@simplified_string, :simplified) == @traditional_string
   end
 
   test "translate a sentence t->s" do
-    assert ChineseTranslation.translate(@traditional_string, :traditional) == @simplified_string
+    assert Han.translate(@traditional_string, :traditional) == @simplified_string
   end
 end

@@ -1,9 +1,9 @@
-defmodule ChineseTranslation.Pinyin.Util do
+defmodule Han.Pinyin.Util do
   @moduledoc """
   Utility functions to read pinyin_characters.txt / pinyin_words.txt and parse
   it into a list ordered by the length of the words.
   """
-  alias ChineseTranslation.{Iterable, Utils}
+  alias Han.{Iterable, Utils}
 
   # the order is very important here
   @files ["pinyin_characters.txt", "pinyin_words.txt"]

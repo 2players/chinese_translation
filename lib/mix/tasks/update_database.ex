@@ -1,11 +1,13 @@
-defmodule Mix.Tasks.ChineseTranslation do
+defmodule Mix.Tasks.Han.UpdateDatabase do
   @moduledoc """
-  The task for loading latest data from wikipedia.
+  Fetch the latest database for Han.
   """
-  use Mix.Task
-  alias ChineseTranslation.Utils
 
-  @shortdoc "get the latest version of the translation table and recompile myself"
+  use Mix.Task
+
+  alias Han.Utils
+
+  @shortdoc "Fetch the latest database for Han."
 
   @urls [
     {
@@ -22,7 +24,7 @@ defmodule Mix.Tasks.ChineseTranslation do
     }
   ]
 
-  def run(_args) do
+  def run(_) do
     HTTPoison.start()
     get_data_file(@urls)
     recompile()
@@ -36,7 +38,6 @@ defmodule Mix.Tasks.ChineseTranslation do
   end
 
   defp recompile do
-    IO.puts("Recompiling chinese_translation...")
     System.cmd("mix", ["clean"])
     System.cmd("mix", ["compile"])
   end

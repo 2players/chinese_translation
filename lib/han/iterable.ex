@@ -1,4 +1,4 @@
-defmodule ChineseTranslation.Iterable do
+defmodule Han.Iterable do
   @moduledoc """
   Support for iterable functions.
   """
