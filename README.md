@@ -4,7 +4,7 @@ Utils for processing chinese.
 
 This module provides three core functionalities related to chinese:
 
-1. translate: translate between tranditional chinese to simplified chinese based on [Wikipedia's conversion data]("https://raw.githubusercontent.com/wikimedia/mediawiki/master/languages/data/ZhConversion.php")
+1. translate: translate between tranditional chinese to simplified chinese based on [Wikipedia's conversion data]("https://raw.githubusercontent.com/wikimedia/mediawiki/master/languages/data/ZhConversion.php").
 2. pinyin: translate chinese words to pinyin. It is based on the data from [janx/ruby-pinyin](https://github.com/janx/ruby-pinyin).
 3. slugify: slugify chinese words.
 
@@ -29,13 +29,13 @@ $ MAX_WORD_LEN=1 mix compile
 
 ## Update database
 
-This module has a built-in mix task - download the latest database:
+This module has a built-in mix task - update database:
 
 ```bash
 $ mix han.update_database
 ```
 
-The downloaded file will be put into `priv/`.
+The downloaded file will be placed into `priv/`.
 
 ## Usage
 
@@ -85,10 +85,7 @@ iex> Han.slugify("关于 Elixir 的 HTML5 页面")
 
 ## Performance
 
-If you installed [benchfella](https://github.com/alco/benchfella). You could test the performance of this module in your system. Below is a general benchmark result.
-
-```bash
-$ mix bench
+```text
 Operating System: macOS
 CPU Information: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
 Number of Available Cores: 12
