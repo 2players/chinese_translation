@@ -8,7 +8,9 @@ defmodule Han do
   """
 
   @doc ~S"""
-  Public function to translate chinese. Example:
+  Public function to translate chinese.
+
+  ## Examples
 
       iex> Han.translate("中国")
       "中國"
@@ -29,7 +31,9 @@ defmodule Han do
     do: content |> Translate.do_t2s() |> IO.iodata_to_binary()
 
   @doc ~S"""
-  Public function to convert Chinese words to pinyin. Example:
+  Public function to convert chinese words to pinyin.
+
+  ## Examples
 
       iex> Han.pinyin("中国")
       "zhōng guó"
@@ -55,7 +59,9 @@ defmodule Han do
     do: content |> translate(:traditional) |> pinyin
 
   @doc ~S"""
-  Public function to slugify Chinese words. Example:
+  Public function to slugify chinese words.
+
+  ## Examples
 
       iex> Han.slugify("中国")
       "zhong-guo"
