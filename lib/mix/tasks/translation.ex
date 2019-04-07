@@ -9,16 +9,16 @@ defmodule Mix.Tasks.ChineseTranslation do
 
   @urls [
     {
-      "http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3/includes/ZhConversion.php",
-      "s2t_conversion.txt"
-    },
-    {
       "https://raw.githubusercontent.com/janx/ruby-pinyin/master/lib/ruby-pinyin/data/words.dat",
       "pinyin_words.txt"
     },
     {
       "https://raw.githubusercontent.com/janx/ruby-pinyin/master/lib/ruby-pinyin/data/Mandarin.dat",
       "pinyin_characters.txt"
+    },
+    {
+      "https://raw.githubusercontent.com/wikimedia/mediawiki/master/languages/data/ZhConversion.php",
+      "s2t_conversion.txt"
     }
   ]
 

@@ -5,7 +5,8 @@ defmodule ChineseTranslation.Translation.Util do
   """
   alias ChineseTranslation.Utils
 
-  @php_regex ~r/\$(?<name>\S+).*\((?<content>[^\)]+)\)/
+  # .*? no-greedy match ;)
+  @php_regex ~r/\$(?<name>\S+).*?\[(?<content>[^\]]*)\]/s
   @php_kv ~r/'(?<key>[^']+)'\s*=>\s*'(?<value>[^']+)'/
 
   def get_trans_data do
@@ -13,10 +14,10 @@ defmodule ChineseTranslation.Translation.Util do
     |> Path.join("s2t_conversion.txt")
     |> get_file_content
     |> match
-    |> Enum.map(fn [_whole, name, content] ->
-         {name, parse(content)}
-       end)
-    |> Enum.into(%{})
+    |> Enum.into(%{}, fn [_whole, name, content] ->
+      {name, parse(content)}
+    end)
+    |> Map.get("zh2Hant", [])
   end
 
   defp get_file_content(filename) do
@@ -37,30 +38,16 @@ defmodule ChineseTranslation.Translation.Util do
   defp parse(content) do
     @php_kv
     |> Regex.scan(content)
-    |> Enum.map(fn [_whole, key, value] ->
-         {key, value}
-       end)
+    |> Enum.map(fn [_whole, simp, trad] ->
+      {simp, trad}
+    end)
     |> sort
   end
 
   defp sort(data) do
     data
     |> Enum.sort(fn {k1, _}, {k2, _} ->
-         String.length(k1) > String.length(k2)
-       end)
-  end
-
-  # for debug purpose - to see how the parsed file is
-  def to_files, do: Enum.map(get_trans_data(), &to_file/1)
-
-  defp to_file({name, data}) do
-    content =
-      data
-      |> Enum.map(fn {k, v} ->
-           "#{k}: #{v}"
-         end)
-      |> Enum.join("\n")
-
-    File.write!("data/#{name}.txt", content)
+      String.length(k1) > String.length(k2)
+    end)
   end
 end
