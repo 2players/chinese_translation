@@ -50,7 +50,7 @@ defmodule Han.Mixfile do
     [
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*", "version"],
       licenses: ["MIT"],
-      maintainers: ["m3121n"],
+      maintainers: ["m31271n"],
       links: %{
         "GitHub" => @repo_url,
         "Docs" => @doc_url
