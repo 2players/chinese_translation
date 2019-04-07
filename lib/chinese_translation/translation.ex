@@ -1,6 +1,6 @@
 defmodule ChineseTranslation.Translation do
   @moduledoc """
-  Generate a set of translation functions
+  Generate a set of translation functions.
   """
   alias ChineseTranslation.Translation.Util
 

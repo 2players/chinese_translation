@@ -4,7 +4,7 @@ defmodule ChineseTranslation do
   alias ChineseTranslation.Translation, as: Translate
 
   @moduledoc """
-  This module provides utils for processing chinese.
+  Utils for processing chinese.
   """
 
   @doc ~S"""

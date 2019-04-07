@@ -1,6 +1,6 @@
 defmodule ChineseTranslation.Utils do
   @moduledoc """
-  utility functions
+  Utility functions.
   """
   def data_path do
     :chinese_translation

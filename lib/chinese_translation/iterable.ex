@@ -1,6 +1,6 @@
 defmodule ChineseTranslation.Iterable do
   @moduledoc """
-  support for iterable functions
+  Support for iterable functions.
   """
   @not_implemented "not implemented"
 

@@ -37,7 +37,8 @@ defmodule ChineseTranslation.Mixfile do
       {:benchfella, "~> 0.3.5", only: [:dev]},
       {:credo, "~> 0.8", only: [:dev, :test]},
       {:ex_doc, "~> 0.19", only: [:dev, :test]},
-      {:pre_commit_hook, "~> 1.0.6", only: [:dev]}
+      {:pre_commit_hook, "~> 1.0.6", only: [:dev]},
+      {:benchee, "~> 1.0", only: [:dev]}
     ]
   end
 

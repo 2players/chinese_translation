@@ -1,11 +1,8 @@
 defmodule ChineseTranslation.Slugify do
   @moduledoc """
-  Read the pinyin tone file and generate functions to
-  normalize the tone
+  Read the pinyin tone file and generate functions to normalize the tone.
   """
   alias ChineseTranslation.Pinyin.Util
-
-  IO.puts("Processing pinyin tones")
 
   Util.get_tone_data()
   |> Stream.map(fn {pinyin, ascii, _tone} ->
