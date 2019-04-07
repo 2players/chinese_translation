@@ -8,11 +8,11 @@ defmodule ChineseTranslation.Slugify do
   IO.puts("Processing pinyin tones")
 
   Util.get_tone_data()
-  |> Stream.map(fn {pinyin, ascii, tone} ->
-       defp process(unquote(pinyin) <> rest, _acc) do
-         unquote(:binary.bin_to_list(ascii)) ++ process(rest, unquote(tone))
-       end
-     end)
+  |> Stream.map(fn {pinyin, ascii, _tone} ->
+    defp process(unquote(pinyin) <> rest, _acc) do
+      unquote(:binary.bin_to_list(ascii)) ++ process(rest)
+    end
+  end)
   |> Enum.to_list()
 
   defp process(<<ch, rest::binary>>, acc) do
