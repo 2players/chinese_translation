@@ -10,4 +10,4 @@ sudo: false
 before_script:
   - mix deps.get
 script:
-  - mix test_all
+  - mix test
