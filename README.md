@@ -1,5 +1,7 @@
 # Han
 
+![Build Status](https://api.travis-ci.org/2players/ex_han.svg)
+
 Utils for processing chinese.
 
 This module provides three core functionalities related to chinese:

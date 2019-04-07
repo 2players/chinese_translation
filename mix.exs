@@ -9,7 +9,7 @@ defmodule Han.Mixfile do
     [
       app: :han,
       version: @version,
-      elixir: "~> 1.8",
+      elixir: "~> 1.7",
       description: description(),
       package: package(),
       start_permanent: Mix.env() == :prod,
