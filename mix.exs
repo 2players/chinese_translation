@@ -2,7 +2,7 @@ defmodule Han.Mixfile do
   use Mix.Project
 
   @version File.cwd!() |> Path.join("version") |> File.read!() |> String.trim()
-  @repo_url "https://github.com/2players/han"
+  @repo_url "https://github.com/2players/ex_han"
   @doc_url "https://hexdocs.pm/han"
 
   def project do
