@@ -1,7 +1,5 @@
 # Han
 
-![Build Status](https://api.travis-ci.org/2players/ex_han.svg)
-
 Utils for processing chinese.
 
 This module provides three core functionalities related to chinese:
@@ -116,4 +114,4 @@ slugify a sentence in traditional chinese          5.09 K      196.59 μs     ±
 
 ## License
 
-[MIT](https://2players.studio/licenses/MIT) © [2Players Studio](https://2players.studio/)
+MIT

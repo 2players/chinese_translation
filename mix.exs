@@ -2,7 +2,7 @@ defmodule Han.Mixfile do
   use Mix.Project
 
   @version File.cwd!() |> Path.join("version") |> File.read!() |> String.trim()
-  @repo_url "https://github.com/2players/ex_han"
+  @repo_url "https://github.com/c4710n/ex_han"
   @doc_url "https://hexdocs.pm/han"
 
   def project do
@@ -50,7 +50,6 @@ defmodule Han.Mixfile do
     [
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*", "version"],
       licenses: ["MIT"],
-      maintainers: ["m31271n"],
       links: %{
         "GitHub" => @repo_url,
         "Docs" => @doc_url
