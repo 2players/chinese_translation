@@ -1,5 +1,5 @@
 defmodule HanTest.Translate do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   doctest Han
 
   test "can translate character s->t" do

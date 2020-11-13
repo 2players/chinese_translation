@@ -1,5 +1,5 @@
 defmodule HanTest.Pinyin do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "can translate chinese into pinyin" do
     assert Han.pinyin("铸模") == "zhù mó"

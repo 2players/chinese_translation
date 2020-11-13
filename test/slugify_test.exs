@@ -1,5 +1,5 @@
 defmodule HanTest.Slugify do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
 
   test "can slugify the chinese chanraters" do
     assert Han.slugify("长大以后的长工") == "zhang-da-yi-hou-de-chang-gong"
