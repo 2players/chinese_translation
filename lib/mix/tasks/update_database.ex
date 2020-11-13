@@ -25,7 +25,6 @@ defmodule Mix.Tasks.Han.UpdateDatabase do
   ]
 
   def run(_) do
-    HTTPoison.start()
     get_data_file(@urls)
     recompile()
   end
