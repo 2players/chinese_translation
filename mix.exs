@@ -33,9 +33,7 @@ defmodule Han.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 1.7.0"},
-      {:credo, "~> 1.5.1", only: [:dev, :test]},
       {:ex_doc, "~> 0.23.0", only: [:dev, :test]},
-      {:pre_commit_hook, "~> 1.2.0", only: [:dev]},
       {:benchee, "~> 1.0.0", only: [:dev]}
     ]
   end
